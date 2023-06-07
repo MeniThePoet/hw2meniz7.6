@@ -1,33 +1,33 @@
 public abstract class Function {
 
     /**
-     * this function returns a double (real number) representing the value of the current function at a given "x"
+     * this function returns the value of the function at a given point x.
      *
-     * @param x the x coordinate value we want to calculate the value function at
-     * @return a double representing the value of the current function at the given "x"
+     * @param x the value we want to calculate the function at.
+     * @return returns the value of the function at x.
      */
     abstract double valueAt(double x);
+
     /**
-     * this function returns a String representation of the current function
+     * this function returns a String representation of the current function.
      *
-     * @return a String representation of the current function
+     * @return a String representation of the current function.
      */
     @Override
     abstract public String toString();
 
     /**
-     * this function returns a Function representing the derivative of the given function
+     * this function returns a Function  representing the derivative of the current function.
      *
-     * @return returns a Function object representing the derivative of the current function
+     * @return returns a Function derivative of the current function.
      */
     abstract Function derivative();
 
     /**
-     * this function returns the derivative of the current function of the received "n" order.
+     * this function returns a Function representing the integral of the current function.
      *
-     * @param n the order of the derivative we want to receive.
-     * @return returns a Function object representing the derivative of the current function of the received "n"
-     * order.
+     * @param n the number of times we want to derive the function.
+     * @return returns a Function representing the integral of the current function.
      */
     public Function DevHigh(int n) {
         Function SetDerivative = derivative();
@@ -56,8 +56,8 @@ public abstract class Function {
      * this function gets an estimate of the square root of the function in the segment [a,b],
      * for given two real numbers a,b and with a maximum error margin of the given epsilon.
      *
-     * @param a the left most end of the segment we want to calculate the square root for.
-     * @param b the right most end of the segment we want to calculate the square root for.
+     * @param a       the left most end of the segment we want to calculate the square root for.
+     * @param b       the right most end of the segment we want to calculate the square root for.
      * @param epsilon the maximum error margin for the square root calculation.
      * @return returns the square root of the function in [a,b] with error margin epsilon.
      */
@@ -117,7 +117,8 @@ public abstract class Function {
     }
 
     /**
-     * this function receives a natural integer "n" returns the taylor polynomial of order "n" at x=0.
+     * this function receives a natural integer "n" returns the taylor polynomial of order "n" at x=0
+     * i.e f(x)=f(0)+f'(0)x+f''(0)x^2/2!+...+f^(n)(0)x^n/n! - aka the maclaurin polynomial
      *
      * @param n a natural integer representing the order of the taylor polynomial we want to calculate.
      * @return returns the taylor polynomial of the received order "n" at x=0.

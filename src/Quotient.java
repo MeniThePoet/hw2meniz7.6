@@ -1,6 +1,6 @@
 public class Quotient extends Function {
-    private Function denoFunc;//mecane
-    private Function numFunc;//mone
+    private Function denoFunc;//mecane - denominator
+    private Function numFunc;//mone - numerator
 
     /**
      * constructor for the quotient of two functions
@@ -9,8 +9,8 @@ public class Quotient extends Function {
      * @param numFunc  numerator function of the quotient
      */
     public Quotient(Function numFunc, Function denoFunc) {
-        this.numFunc = numFunc;//mecane
-        this.denoFunc = denoFunc;//mone
+        this.numFunc = numFunc;
+        this.denoFunc = denoFunc;
     }
 
     /**

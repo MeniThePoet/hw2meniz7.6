@@ -1,6 +1,3 @@
-/**
- * This class represents a date in the Gregorian calendar.
- */
 public class Date {
     private int year;
     private int month;

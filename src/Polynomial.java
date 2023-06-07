@@ -1,6 +1,5 @@
-
 public class Polynomial extends Function {
-    private double[] coefficients;
+    protected double[] coefficients; // the coefficients of the polynomial in protected so that there will be no need for getters and setters
 
     /**
      * Constructor
@@ -30,7 +29,6 @@ public class Polynomial extends Function {
      *
      * @return The representation of the function as a string
      */
-
     @Override
     public String toString() {
         String startout = "(";
@@ -46,7 +44,7 @@ public class Polynomial extends Function {
                 startout += "-";
             }
             firstCoefficient = false;
-            startout += coefficientToPrint(coefficients[i], i);
+            startout += CoefficientsOut(coefficients[i], i);
             if (i > 1) {
                 startout += "x^" + i;
             }
@@ -64,9 +62,11 @@ public class Polynomial extends Function {
      * This function returns a String representation of the coefficient
      *
      * @param coefficient the coefficient to print
+     * @param i           the index of the coefficient
+     * @return a String representation of the coefficient
      */
-    private String coefficientToPrint (double coefficient, int i) {
-        if ((coefficient == 1 || coefficient == -1) && i!=0) {
+    private String CoefficientsOut(double coefficient, int i) {
+        if ((coefficient == 1 || coefficient == -1) && i != 0) {
             return "";
         }
 
@@ -77,10 +77,8 @@ public class Polynomial extends Function {
         return Double.toString(coefficient);
     }
 
-
-
     /**
-     * gives the derivative of the function
+     * calculate the derivative of the POLYNOMIAL
      *
      * @return the derivative of the function
      */
@@ -93,59 +91,5 @@ public class Polynomial extends Function {
             derivative_coefficients[i - 1] = coefficients[i] * i;
         return new Polynomial(derivative_coefficients);
     }
-
-//    @Override
-//    public Polynomial taylorPolynomial(int n) {
-//        double[] coefficients = this.coefficients;
-//        double[] taylor_coefficients = new double[n + 1];
-//        for (int i = 0; i < coefficients.length && i < n + 1; i++)
-//            taylor_coefficients[i] = this.derivative().valueAt(0) / factorial(i);
-//        return new Polynomial(taylor_coefficients);
-//    }
-
-    /**
-     * gives the taylor polynomial of the function
-     *
-     * @return the taylor polynomial of the function
-     */
-//    public Polynomial negate() {
-//        double[] coefficients = this.getValues();
-//        double[] negated_coefficients = new double[coefficients.length];
-//        for (int i = 0; i < coefficients.length; i++)
-//            negated_coefficients[i] = coefficients[i] * (-1);
-//        return new Polynomial(negated_coefficients);
-//    }
-
-    /**
-     * gives the taylor polynomial of the function
-     *
-     * @param polynomial the polynomial to divide by
-     * @return the taylor polynomial of the function
-     */
-//    public Polynomial divide(Polynomial polynomial) {
-//        double[] coefficients = this.getValues();
-//        double[] polynomialCoefficients = polynomial.getValues();
-//        if (coefficients.length - polynomialCoefficients.length + 1 <= 0)
-//            return new Polynomial(0);
-//        double[] quotientCoefficients = new double[coefficients.length - polynomialCoefficients.length + 1];
-//        double[] remainderCoefficients = new double[polynomialCoefficients.length - 1];
-//
-//        for (int i = 0; i < Math.min(coefficients.length, quotientCoefficients.length); i++) {
-//            quotientCoefficients[i] = coefficients[i];
-//        }
-//        for (int i = 0; i < Math.min(polynomialCoefficients.length, remainderCoefficients.length); i++) {
-//            remainderCoefficients[i] = polynomialCoefficients[i];
-//        }
-//        for (int i = 0; i < quotientCoefficients.length; i++) {
-//            if (quotientCoefficients[i] != 0) {
-//                for (int j = 0; j < Math.min(remainderCoefficients.length, quotientCoefficients.length ); j++) {
-//                    quotientCoefficients[i + j] -= remainderCoefficients[j];
-//                }
-//            }
-//        }
-//        return new Polynomial(quotientCoefficients);
-//    }
-
-
 }
 

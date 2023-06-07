@@ -1,5 +1,5 @@
 public class Constant extends Function {
-    private final double value;
+    private final double value; // the value of the constant in private final because it is a constant and should not be changed
 
     /**
      * Constructor

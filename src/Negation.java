@@ -3,7 +3,6 @@ public class Negation extends Function {
     protected Function function;
     protected Constant Negi;
 
-
     /**
      * Constructor of Negation function
      *

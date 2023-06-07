@@ -1,7 +1,3 @@
-/**
- * DateTime class
- */
-
 public class DateTime extends Date {
     private int hour;
     private int minute;
@@ -95,7 +91,11 @@ public class DateTime extends Date {
         else
             return false;
     }
-
+    /**
+     * override the hashCode method
+     *
+     * @return the hashcode of the date
+     */
     public int hashCode() {
         int result = super.hashCode();
         result = 51 * result + this.minute;

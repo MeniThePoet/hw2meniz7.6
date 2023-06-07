@@ -17,7 +17,7 @@ public class Difference extends Function {
      * calculates the value of the difference function at a given point
      *
      * @param x the x coordinate value we want to calculate the value function at
-     * @return
+     * @return  the value of the difference function at a given point
      */
     public double valueAt(double x) {
         return fun1.valueAt(x) - fun2.valueAt(x);
@@ -26,7 +26,7 @@ public class Difference extends Function {
     /**
      * returns a String representation of the current function
      *
-     * @return
+     * @return a String representation of the current function
      */
     public String toString() {
         return "(" + fun1.toString() + " - " + fun2.toString() + ")";
@@ -35,7 +35,7 @@ public class Difference extends Function {
     /**
      * returns a Function object representing the derivative of the current function
      *
-     * @return
+     * @return  returns a Function object representing the derivative of the current function
      */
     public Function derivative() {
         return new Difference(fun1.derivative(), fun2.derivative());

@@ -1,5 +1,5 @@
 public class Power extends Function {
-    protected Function base;
+    protected Function base; // the base function of the power function
     protected int PowerOf;
 
     /**
